@@ -1397,7 +1397,7 @@ bool DotManager::run()
     for (li.toFirst();(dr=li.current());++li)
     {
       msg("Running dot for graph %d/%d\n",prev,numDotRuns);
-      dr->run();
+      if (!dr->run()) return FALSE;
       prev++;
     }
   }

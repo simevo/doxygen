@@ -11924,7 +11924,8 @@ void generateOutput()
   if (Config_getBool(HAVE_DOT))
   {
     g_s.begin("Running dot...\n");
-    DotManager::instance()->run();
+    if (!DotManager::instance()->run())
+      exit(1);
     g_s.end();
   }
 
